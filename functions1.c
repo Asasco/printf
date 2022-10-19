@@ -32,7 +32,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	i++;
 
-	return (writ_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
 /************* PRINT UNSIGNED NUMBER IN OCTAL ****************/
@@ -61,19 +61,19 @@ int print_octal(va_list types, char buffer[],
 	if (num == 0)
 		buffer[i--] = '0';
 
-	buffer[BUFF_SIZE - 1]= '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
 	{
 		buffer[i--] = (num % 8) + '0';
 		num /= 8;
 	}
-	
+
 	if (flags & F_HASH && init_num != 0)
 		buffer[i--] = '0';
 
 	i++;
-	
+
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
