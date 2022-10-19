@@ -1,6 +1,6 @@
 #include "main.h"
 
-/** PRINT CHAR **/
+/************************* PRINT CHAR *************************/
 
 /**
  * print_char - Prints a char
@@ -19,7 +19,7 @@ int print_char(va_list types, char buffer[],
 
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
-/** PRINT A STRING **/
+/************************* PRINT A STRING *************************/
 /**
  * print_string - Prints a string
  * @types: List a of arguments
@@ -116,7 +116,7 @@ int print_int(va_list types, char buffer[],
 	long int n = va_arg(types, long int);
 	unsigned long int num;
 
-	= convert_size_number(n, size);
+	n = convert_size_number(n, size);
 
 	if (n == 0)
 		buffer[i--] = '0';
